@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import useFadeInObserver from "../../hooks/useFadeInObserver";
+
 import {
   InfoSection,
   InfoContainer,
@@ -18,10 +20,20 @@ const InfoSection2 = ({
   reverse,
   image,
 }) => {
+  const targetRef = useRef(null);
+  const isVisible = useFadeInObserver(
+    {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    },
+    targetRef
+  );
+
   return (
     <InfoSection>
       <InfoContainer>
-        <ColumnLeft>
+        <ColumnLeft ref={targetRef} style={{ opacity: !isVisible ? 0 : 1 }}>
           <InfoSectionH1>{heading}</InfoSectionH1>
           <InfoSectionP>{paragraphOne}</InfoSectionP>
           <InfoSectionP>{paragraphTwo}</InfoSectionP>
