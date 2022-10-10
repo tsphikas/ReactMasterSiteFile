@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FaTimes } from "react-icons/fa";
-import { Link as LinkR } from "react-router-dom";
+//import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
 
 export const SidebarContainer = styled.aside`
@@ -15,13 +15,12 @@ export const SidebarContainer = styled.aside`
   left: 0;
   transition: 0.3s ease-in-out;
   opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
-  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")}; 
-  
+  top: ${({ isOpen }) => (isOpen ? "0" : "-100%")};
 `;
 
 export const CloseIcon = styled(FaTimes)`
   color: #fff;
-  font-size: 1.6rem
+  font-size: 1.6rem;
 `;
 
 export const Icon = styled.div`
@@ -46,7 +45,6 @@ export const SidebarMenu = styled.ul`
   @media screen and (max-width: 480px) {
     grid-template-rows: repeat(4, 60px);
   }
-  
 `;
 
 export const SidebarLink = styled(LinkS)`
@@ -64,7 +62,4 @@ export const SidebarLink = styled(LinkS)`
     color: #01bf71;
     transition: 0.2s ease-in-out;
   }
-
-  
 `;
-

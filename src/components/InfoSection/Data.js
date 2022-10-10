@@ -1,4 +1,4 @@
-import Image from "../../images/background.jpg";
+//import Image from "../../images/background.jpg";
 
 export const homeObjOne = {
   id: "about",
