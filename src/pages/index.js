@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
+import HeroSection2 from "../components/HeroSection2";
 import InfoSection from "../components/InfoSection";
 import Services from "../components/Services";
 import Footer from "../components/Footer";
 import { homeObjOne, homeObjTwo } from "../components/InfoSection/Data";
+import { SliderData } from "./components/HeroSection2/SliderData";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +20,7 @@ const Home = () => {
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
+      <HeroSection2 slides={SliderData} />
       <HeroSection />
       <InfoSection {...homeObjOne} />
       <InfoSection {...homeObjTwo} />
